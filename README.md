@@ -1,10 +1,18 @@
 # testing-html-docs
 
-## List of specicifations
+## Trials
 
-HTML - [Currency Format Setting](https://ttoine.github.io/testing-html-docs/currency-format-setting/currencyformatsetting.html) - raw from Google Doc export
+### Step 1
 
-Clean HTML - [Currency Format Setting](https://ttoine.github.io/testing-html-docs/currency-format-setting/currencyformatsetting-clean.html) - html cleaned up with [HTML Washer](https://www.htmlwasher.com/)
+Raw & minified HTML, generated from Google Doc "Download as HTML"  
+[Currency Format Setting](https://ttoine.github.io/testing-html-docs/currency-format-setting/currencyformatsetting.html)
 
-WIP:
-Markdown - [Currency Format Setting](https://github.com/ttoine/testing-html-docs/blob/master/currency-format-setting/currencyformatsetting.md) using [BrowserLing's tool](https://www.browserling.com/tools/html-to-markdown) addons.
+### Step 2
+
+Clean HTML - previous step, cleaned up with [HTML Washer](https://www.htmlwasher.com/)  
+[Currency Format Setting](https://ttoine.github.io/testing-html-docs/currency-format-setting/currencyformatsetting-clean.html) 
+
+W### Step 3
+
+Markdown - previous step, converted with [BrowserLing's tool](https://www.browserling.com/tools/html-to-markdown)  
+[Currency Format Setting](https://github.com/ttoine/testing-html-docs/blob/master/currency-format-setting/currencyformatsetting.md)
