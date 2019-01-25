@@ -18,3 +18,5 @@ Markdown - previous step, converted with [BrowserLing's tool](https://www.browse
 [Currency Format Setting](https://github.com/ttoine/testing-html-docs/blob/master/currency-format-setting/currencyformatsetting.md)
 
 Please note that pictures are visible in steps 2 & 3 because the conversions keeps the links to the pictures uploaded at step 1
+
+Licence: CC-by-sa-4.0 international
