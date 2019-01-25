@@ -4,7 +4,7 @@
 
 ### Step 1
 
-Raw & minified HTML, generated from Google Doc "Download as HTML"  
+Raw & minified HTML, generated from Google Doc "Download as HTML", and unzipped before uploading on GitHub  
 [Currency Format Setting](https://ttoine.github.io/testing-html-docs/currency-format-setting/currencyformatsetting.html)
 
 ### Step 2
