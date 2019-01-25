@@ -7,4 +7,4 @@ HTML - [Currency Format Setting](https://ttoine.github.io/testing-html-docs/curr
 Clean HTML - [Currency Format Setting](https://ttoine.github.io/testing-html-docs/currency-format-setting/currencyformatsetting-clean.html) - html cleaned up with [HTML Washer](https://www.htmlwasher.com/)
 
 WIP:
-Markdown - [Currency Format Setting](#) using [Docs to Markdown](https://chrome.google.com/webstore/detail/docs-to-markdown/igffnbdfnodiaphfmfaiiaegmoljbghf) addons.
+Markdown - [Currency Format Setting](https://github.com/ttoine/testing-html-docs/blob/master/currency-format-setting/currencyformatsetting.md) using [BrowserLing's tool](https://www.browserling.com/tools/html-to-markdown) addons.
