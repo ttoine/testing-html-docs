@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <p>Currency format setting</p>
+  <p>CLDR and all that stuff</p>
+  <p><a href="#h.3e2a5w18070m">USER STORY</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#h.3e2a5w18070m">1</a></p>
+  <p><a href="#h.401yn69xtlzi">WHY</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#h.401yn69xtlzi">1</a></p>
+  <p><a href="#h.c4gagjhy83n2">SPECIFICATION</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#h.c4gagjhy83n2">2</a></p>
+  <p><a href="#h.nobzb7sgzndl">DETAILED SPECIFICATION</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#h.nobzb7sgzndl">2</a></p>
+  <p><a href="#h.do28l6lwu765">Add a currency</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#h.do28l6lwu765">2</a></p>
+  <p><a href="#h.bqpbv8j08ren">Edit a currency</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#h.bqpbv8j08ren">3</a></p>
+  <p><a href="#h.qlrmv8ogeh9">DESIGN</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#h.qlrmv8ogeh9">4</a></p>
+  <p><a href="#h.r0wohygkei9o">Failing cases</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#h.r0wohygkei9o">4</a></p>
+  <p><a href="#h.xwgqu5ggq5u2">Error/Warning case:</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#h.xwgqu5ggq5u2">4</a></p>
+  <p><a href="#h.mjnjpabfb0dy">ISSUES RELATED</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#h.mjnjpabfb0dy">4</a></p>
+  <p><a href="#h.c41vtkdf32je">OLD SPECIFICATION</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#h.c41vtkdf32je">5</a></p>
+  <p><a href="#h.td1hpanbhaeo">ACCEPTANCE CRITERIA</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#h.td1hpanbhaeo">5</a></p>
+  <hr>
+  <h1>USER STORY</h1>
+  <p>Localization &gt; Currencies &gt; Edit/Add Page</p>
+  <p>As a merchant, I want to manage the display of my currencies in the Front Office depending on the language if needed in order to adapt my shop to my clients&nbsp;visual expectations.</p>
+  <h1>WHY</h1>
+  <p>We have understand&nbsp;there is a big complexity on the currency display choose when you shop is for B2C or B2B, or when you sell on&nbsp;countries sharing the same symbol currency as in Latin America countries with the pesos. Each merchant as it&nbsp;own currency format problematics, so we allow the merchant&nbsp;the possibility to custom the currency format depending of&nbsp;any&nbsp;language of their shops.</p>
+  <p>The currency format will have now be fully customizable assisted by the CLDR.</p>
+  <p>Reminder, the CLDR (Common Locale Data Repository) is a database containing the convention of different languages as format date, currencies and more shared by the biggest companies. It will be the main source to provide the best currencies pre-configuration to the merchant.</p>
+  <p>The merchant don’t&nbsp;have to worry about their currencies display anymore but they still can edit if needed. Their shop won’t look suspicious because of a wrong currency displayed. The currency display will adapt itself to every of their customers.</p>
+  <h1>SPECIFICATION</h1>
+  <p>The implementation of the CLDR database and the feature to change the currency display in the FO &nbsp;by language is already done (Here the first part <a href="https://www.google.com/url?q=https://github.com/PrestaShop/PrestaShop/issues/10052&amp;sa=D&amp;ust=1548418107666000">#10052</a>).</p>
+  <p>Remaining improvements features of the Page Add Currency and Edit Currency in Page Currencies of Localization Category is the format setting. It allows:</p>
+  <ul>
+    <li>To edit currency symbol by language</li>
+    <li>To edit symbol position by language for all the currencies</li>
+    <li>The separating symbol of thousands and decimals is only configured by the CLDR</li>
+  </ul>
+  <p>It’s the second part of the page currency adding and edition. It has the languages list with the currency display according to the language next to it. It will be possible for the merchant to edit the currency format or to reset it by language. By default, the format setting (position and symbol, decimals, separating symbol) is configure&nbsp;by the CLDR.</p>
+  <h1>DETAILED SPECIFICATION</h1>
+  <h2>Add a currency</h2>
+  <p>When the page is loaded, the currency symbol on the language list will be displayed with X.</p>
+  <p>If the merchant selects a currency from the drop list before, it will present the example with the right currency symbol with the CLDR settings (position and symbol, decimals, separating symbol by language).</p>
+  <p>On the second case for custom currency, the CLDR preconfigure the position and separating symbol by language until the merchant edit the symbol and the decimal. After it, the currency symbol edited will replace the “X”.</p>
+  <p>A currency symbol position (right, left with or without space) saved for a language will be saved for all the currencies for the selected language.</p>
+  <p>Wording is needed to explain that the format part changes will be applied for all the currencies.<a href="#cmnt1">[a]</a><a href="#cmnt2">[b]</a><a href="#cmnt3">[c]</a><a href="#cmnt4">[d]</a></p>
+  <p>Format setting on the bottom of the currency form.<img alt="image1" src="images/image1.png"></p>
+  <p>pop-in after the click on edit when no symbol was filled.<img alt="image3" src="images/image3.png"></p>
+  <p>The merchant can reset the format of a language by clicking on the reset button next to the edit button.</p>
+  <h2>Edit a currency</h2>
+  <p>All the inputs is full filled by saved data. So when the user edits the format, a pop-in will open in which the user can change the symbol and its position on the price display through a radio button.</p>
+  <p><img alt="image2" src="images/image2.png"></p>
+  <p>The decimals and thousands separating format are defined by the CLDR, so for each language, the radio have an adapted display. The currency symbol in the radio is also displaying the symbol of currency that the user is editing.</p>
+  <h1>DESIGN</h1>
+  <p><a href="https://www.google.com/url?q=https://projects.invisionapp.com/d/main%23/console/16335086/338742836/preview&amp;sa=D&amp;ust=1548418107669000">https://projects.invisionapp.com/d/main#/console/16335086/338742836/preview</a></p>
+  <h2>Failing cases</h2>
+  <h2>Error/Warning case:</h2>
+  <h1>ISSUES RELATED</h1>
+  <ul>
+    <li>&nbsp;<a href="https://www.google.com/url?q=https://github.com/PrestaShop/PrestaShop/issues/9714&amp;sa=D&amp;ust=1548418107670000">#9714</a>
+    </li>
+    <li>&nbsp;<a href="https://www.google.com/url?q=https://github.com/PrestaShop/PrestaShop/issues/10014&amp;sa=D&amp;ust=1548418107671000">#10014</a>
+    </li>
+    <li>&nbsp;<a href="https://www.google.com/url?q=https://github.com/PrestaShop/PrestaShop/issues/10017&amp;sa=D&amp;ust=1548418107671000">#10017</a>
+    </li>
+    <li>&nbsp;<a href="https://www.google.com/url?q=https://github.com/PrestaShop/PrestaShop/issues/10055&amp;sa=D&amp;ust=1548418107672000">#10055</a>
+    </li>
+    <li>&nbsp;<a href="https://www.google.com/url?q=https://github.com/PrestaShop/PrestaShop/issues/10054&amp;sa=D&amp;ust=1548418107672000">#10054</a>
+    </li>
+    <li>&nbsp;<a href="https://www.google.com/url?q=https://github.com/PrestaShop/PrestaShop/issues/10053&amp;sa=D&amp;ust=1548418107673000">#10053</a>
+    </li>
+    <li>&nbsp;<a href="https://www.google.com/url?q=https://github.com/PrestaShop/PrestaShop/issues/9885&amp;sa=D&amp;ust=1548418107673000">#9885</a>
+    </li>
+  </ul>
+  <h1>OLD SPECIFICATION</h1>
+  <ul>
+    <li>
+      <a href="https://www.google.com/url?q=https://github.com/PrestaShop/PrestaShop/issues/10058&amp;sa=D&amp;ust=1548418107674000">#10058</a>
+    </li>
+    <li>
+      <a href="https://www.google.com/url?q=https://github.com/PrestaShop/PrestaShop/pull/11690&amp;sa=D&amp;ust=1548418107674000">#11690</a>
+    </li>
+  </ul>
+  <h1>ACCEPTANCE CRITERIA</h1>
+  <p>To be completed with QA and developers.</p>
+  <p>Given... [a context],</p>
+  <p>when... [users does something],</p>
+  <p>then... [what the user should observe]</p>
+  <p>WORDING</p>
+  <p><a href="#cmnt_ref1">[a]</a>+louise.bonnard@prestashop.com</p>
+  <p>Your talent is required please. Call me if you need more context</p>
+  <p><a href="#cmnt_ref2">[b]</a>Isn't there already a wording to explain it? I can see "Apply format on all currencies for English language" with a ticking box.</p>
+  <p><a href="#cmnt_ref3">[c]</a>The check box will be removed because it will apply by default it to all the languages</p>
+  <p><a href="#cmnt_ref4">[d]</a>'(Please) note that the selected format will apply all currencies' ?</p>
+</body>
+</html>
