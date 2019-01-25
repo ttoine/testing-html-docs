@@ -2,4 +2,6 @@
 
 ## List of specicifations
 
-[Currency Format Setting - CLDR](https://ttoine.github.io/testing-html-docs/currency-format-setting/currencyformatsetting.html)
+HTML - [Currency Format Setting - CLDR](https://ttoine.github.io/testing-html-docs/currency-format-setting/currencyformatsetting.html)
+
+Markdown - [Currency Format Setting - CLDR](#)
